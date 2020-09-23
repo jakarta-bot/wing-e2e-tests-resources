@@ -1,34 +1,39 @@
 {
-    "name": "bookshop",
-    "version": "1.0.0",
-    "description": "A simple CAP project.",
-    "repository": "<Add your repository here>",
-    "license": "UNLICENSED",
-    "private": true,
-    "dependencies": {
+  "name": "bookshop",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
       "@sap/cds": "^4",
       "express": "^4"
-    },
-    "devDependencies": {
+  },
+  "devDependencies": {
       "sqlite3": "^5"
-    },
-    "scripts": {
+  },
+  "scripts": {
       "start": "npx cds run"
-    },
-    "cds": {
-      "requires": {
-        "metadata": {
-          "kind": "odata",
-          "model": "srv/external/metadata"
-        }
+  },
+  "cds": {
+      "[development]": {
+          "requires": {
+              "metadata": {
+                  "kind": "odata",
+                  "model": "srv/external/metadata"
+              }
+          }
       },
       "[production]": {
-        "requires": {
-          "metadata": {
-            "kind": "odata",
-            "model": "srv/external/metadata"
+          "requires": {
+              "metadata": {
+                  "kind": "odata",
+                  "model": "srv/external/metadata",
+                  "credentials": {
+                      "destination": "s4cloud_business_partner_vered2full"
+                  }
+              }
           }
-        }
       }
-    }
   }
+}
