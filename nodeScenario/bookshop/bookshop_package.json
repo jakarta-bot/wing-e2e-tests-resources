@@ -28,10 +28,7 @@
           "requires": {
               "metadata": {
                   "kind": "odata",
-                  "model": "srv/external/metadata",
-                  "credentials": {
-                      "destination": "s4cloud_business_partner_vered2full"
-                  }
+                  "model": "srv/external/metadata"
               }
           }
       }
